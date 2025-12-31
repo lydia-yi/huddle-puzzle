@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=4 uid="uid://cuyxhihp0kgu5"]
+
+[ext_resource type="Script" uid="uid://xonlgqi3ewx2" path="res://Scripts/main.gd" id="1_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://cuspp6rlxonuf" path="res://Art/Tilemap.png" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dm4u3silvcerw" path="res://Scenes/penguin.tscn" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://dt0fhkl0sd3t5" path="res://Scenes/penguin_b.gd" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://ds8k5kdc30kdt" path="res://Scenes/penguin_c.gd" id="5_kry3j"]
+[ext_resource type="Texture2D" uid="uid://cparflpu2gqk" path="res://Art/Selected.png" id="6_21xkr"]
+[ext_resource type="FontFile" uid="uid://do6wowpd1dk2f" path="res://Art/CherryBombOne-Regular.ttf" id="7_6bp64"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bp64"]
+texture = ExtResource("2_kry3j")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+2:0/0 = 0
+2:0/0/custom_data_0 = true
+3:0/0 = 0
+3:0/0/custom_data_0 = true
+4:0/0 = 0
+4:0/0/custom_data_0 = true
+5:0/0 = 0
+5:0/0/custom_data_0 = true
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "Walkable"
+custom_data_layer_0/type = 1
+sources/0 = SubResource("TileSetAtlasSource_6bp64")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bp64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynf5e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_344ge"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hptm8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jjvhh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(56.793964, -27.461779)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAAIAAAABAAAAAAACAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAAAAAAAAAAAAAAIAAIAAAADAAAAAAAHAAIAAAABAAAAAAAFAAIAAAADAAAAAAAFAAMAAAABAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAADAAAAAAAEAAQAAAAAAAAAAAADAAQAAAABAAAAAAABAAMAAAADAAAAAAACAAMAAAADAAAAAAADAAMAAAABAAAAAAAEAAMAAAAAAAAAAAAGAAEAAAABAAAAAAAHAAEAAAADAAAAAAAIAAQAAAADAAAAAAAEAAIAAAADAAAAAAAEAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAADAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAABAAUAAAADAAAAAAACAAUAAAADAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAADAAAAAAAGAAUAAAADAAAAAAAHAAUAAAADAAAAAAAJAAUAAAADAAAAAAAKAAUAAAADAAAAAAAKAAQAAAADAAAAAAAKAAMAAAADAAAAAAAKAAIAAAADAAAAAAAJAAIAAAADAAAAAAAJAAEAAAADAAAAAAAJAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAOAAEAAAADAAAAAAAOAAIAAAADAAAAAAAOAAMAAAADAAAAAAAOAAYAAAADAAAAAAACAAYAAAAAAAAAAAABAAYAAAADAAAAAAADAAYAAAAAAAAAAAAEAAYAAAAAAAAAAAAFAAYAAAADAAAAAAAGAAYAAAADAAAAAAAHAAYAAAADAAAAAAAIAAYAAAADAAAAAAAJAAYAAAADAAAAAAAKAAYAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAADAAAAAAAJAAQAAAADAAAAAAAJAAMAAAADAAAAAAAKAAEAAAADAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAANAAIAAAADAAAAAAANAAMAAAADAAAAAAANAAUAAAADAAAAAAALAAQAAAADAAAAAAALAAMAAAADAAAAAAAMAAMAAAADAAAAAAAMAAIAAAADAAAAAAAMAAEAAAADAAAAAAALAAEAAAADAAAAAAALAAIAAAADAAAAAAANAAEAAAADAAAAAAABAAcAAAADAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAADAAAAAAAFAAcAAAADAAAAAAAGAAcAAAADAAAAAAAHAAcAAAADAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAYAAAADAAAAAAAMAAUAAAADAAAAAAAMAAQAAAADAAAAAAANAAQAAAADAAAAAAAOAAQAAAADAAAAAAAOAAUAAAADAAAAAAAPAAUAAAAAAAAAAAAPAAMAAAADAAAAAAAPAAIAAAADAAAAAAAPAAEAAAADAAAAAAAPAAAAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAADAAAAAAAOAAcAAAADAAAAAAANAAcAAAADAAAAAAANAAYAAAADAAAAAAAAAAUAAAADAAAAAAAAAAQAAAABAAAAAAAAAAMAAAABAAAAAAAAAAIAAAADAAAAAAANAAgAAAADAAAAAAAQAAcAAAADAAAAAAAQAAgAAAADAAAAAAARAAgAAAADAAAAAAARAAcAAAADAAAAAAAPAAgAAAADAAAAAAAPAAkAAAADAAAAAAAOAAkAAAADAAAAAAAOAAgAAAADAAAAAAAQAAkAAAADAAAAAAARAAkAAAADAAAAAAANAAkAAAAAAAAAAAARAAQAAAADAAAAAAARAAMAAAADAAAAAAAQAAMAAAADAAAAAAAQAAIAAAADAAAAAAARAAIAAAADAAAAAAARAAEAAAADAAAAAAAQAAEAAAADAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAARAAYAAAAAAAAAAAARAAUAAAADAAAAAAAMAAgAAAADAAAAAAAMAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAADAAkAAAAAAAAAAAACAAkAAAAAAAAAAAABAAkAAAAAAAAAAAABAAgAAAADAAAAAAACAAgAAAADAAAAAAADAAgAAAADAAAAAAAEAAgAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAHAAgAAAADAAAAAAAIAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAKAAgAAAAAAAAAAAALAAgAAAADAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAADAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAADAAAAAAASAAoAAAADAAAAAAAIAAUAAAADAAAAAAAEAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAIAAAABAAAAAAAGAAMAAAADAAAAAAAHAAQAAAAAAAAAAAAPAAQAAAAAAAAAAAAAAAEAAAABAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAAAAAADAAEAAAABAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="PenguinA" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(96, 96)
+
+[node name="PenguinB" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(32, 160)
+script = ExtResource("4_jjvhh")
+
+[node name="PenguinC" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(32, 96)
+script = ExtResource("5_kry3j")
+
+[node name="Selected" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+texture = ExtResource("6_21xkr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Controls" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = 576.0
+offset_right = 1064.0
+offset_bottom = 659.0
+theme_override_fonts/normal_font = ExtResource("7_6bp64")
+theme_override_font_sizes/normal_font_size = 46
+text = "Space to swap penguins. WASD to move."
+
+[node name="Instructions" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 1048.0
+offset_bottom = 75.0
+theme_override_fonts/normal_font = ExtResource("7_6bp64")
+theme_override_font_sizes/normal_font_size = 46
+text = "Huddle to stay warm! Get Fish! Keep moving!"
+
+[node name="Score" type="CanvasLayer" parent="."]
+
+[node name="Score" type="RichTextLabel" parent="Score"]
+offset_left = 992.0
+offset_top = 8.0
+offset_right = 1216.0
+offset_bottom = 67.0
+theme_override_fonts/normal_font = ExtResource("7_6bp64")
+theme_override_font_sizes/normal_font_size = 32
+text = "FISH: "
+
+[node name="Victory" type="RichTextLabel" parent="."]
+offset_left = 432.0
+offset_top = 336.0
+offset_right = 472.0
+offset_bottom = 376.0
+
+[node name="GameOver" type="RichTextLabel" parent="."]
+offset_left = 248.0
+offset_top = 176.0
+offset_right = 1024.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(0.74658525, 2.0094587e-06, 8.663535e-07, 1)
+theme_override_fonts/normal_font = ExtResource("7_6bp64")
+theme_override_font_sizes/normal_font_size = 120
+text = "GAME OVER"
+
+[node name="RestartButton" type="Button" parent="."]
+visible = false
+z_index = 1
+offset_left = 432.0
+offset_top = 336.0
+offset_right = 760.0
+offset_bottom = 417.0
+theme_override_colors/font_color = Color(0.74509805, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.4655, 0.4655, 1)
+theme_override_fonts/font = ExtResource("7_6bp64")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6bp64")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ynf5e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_344ge")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hptm8")
+text = "PLAY AGAIN"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

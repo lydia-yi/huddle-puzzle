@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm4u3silvcerw"]
+
+[ext_resource type="Script" uid="uid://dp5i4c2k1vxur" path="res://Scenes/penguin_a.gd" id="1_6kf6s"]
+[ext_resource type="Texture2D" uid="uid://cmd60lc0wm67c" path="res://Art/PenguinCold.png" id="2_m72w2"]
+[ext_resource type="Texture2D" uid="uid://bj6iag17kpsp2" path="res://Art/PenguinNormal.png" id="3_4pqqi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2yge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m72w2")
+}],
+"loop": true,
+"name": &"Cold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4pqqi")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}]
+
+[node name="PenguinA" type="Node2D"]
+script = ExtResource("1_6kf6s")
+
+[node name="PenguinSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h2yge")
+animation = &"Default"
+
+[node name="FreezeTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="FreezeTimer" to="." method="_on_freeze_timer_timeout"]
