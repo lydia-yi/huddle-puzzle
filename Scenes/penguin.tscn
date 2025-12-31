@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dm4u3silvcerw"]
 
-[ext_resource type="Script" uid="uid://dp5i4c2k1vxur" path="res://Scenes/penguin_a.gd" id="1_6kf6s"]
+[ext_resource type="Script" uid="uid://dp5i4c2k1vxur" path="res://Scripts/penguin_a.gd" id="1_6kf6s"]
 [ext_resource type="Texture2D" uid="uid://dau2a7txs7i1y" path="res://Art/Danger.png" id="2_4pqqi"]
 [ext_resource type="Texture2D" uid="uid://cmd60lc0wm67c" path="res://Art/PenguinCold.png" id="2_m72w2"]
 [ext_resource type="Texture2D" uid="uid://bj6iag17kpsp2" path="res://Art/PenguinNormal.png" id="3_4pqqi"]
